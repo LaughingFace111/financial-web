@@ -10,6 +10,7 @@ const mockTags = [
 export function ResponsiveEntryForm() {
   const [tagIds, setTagIds] = useState<number[]>([]);
 
+export function ResponsiveEntryForm() {
   return (
     <form className='grid grid-cols-1 gap-3 rounded-xl bg-white p-4 shadow md:grid-cols-2 xl:grid-cols-3'>
       <input className='rounded border p-2' placeholder='金额' />
