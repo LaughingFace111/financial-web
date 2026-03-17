@@ -24,3 +24,22 @@
 ## 模块六：PWA 与性能
 - `frontend/public/manifest.json` + `frontend/public/service-worker.js` + `frontend/src/pwa/registerSW.ts`。
 - 长列表窗口化渲染：`react-window` in `StagingImportTable.tsx`。
+
+## 模块八：家庭协作与权限控制（扩展）
+- 新增 `account_memberships`、`family_invitations`（见 `backend/src/db/schema_extensions.sql`）。
+- 共享账本数据隔离与角色鉴权：`backend/src/middleware/accountScopeGuard.ts`。
+- 共享流水与双人汇总看板 API：`backend/src/routes/family.ts`。
+
+## 模块九：周期性自动账单（扩展）
+- 新增 `recurring_rules`、`recurring_executions`（见 `backend/src/db/schema_extensions.sql`）。
+- 定时任务调度：`backend/src/services/recurringScheduler.ts`（node-cron + DB 事务）。
+
+## 模块十：多维标签与项目账本（扩展）
+- 新增 `tags`、`transaction_tags`（见 `backend/src/db/schema_extensions.sql`）。
+- 后端按 Tag 支出分析：`backend/src/routes/tags.ts`。
+- 前端多选 Tag：`frontend/src/components/TagMultiSelect.tsx`。
+
+## 模块十一：固定资产与专项管理（扩展）
+- 新增 `assets`，并在 `transactions` 增加 `asset_id` 外键（见 `backend/src/db/schema_extensions.sql`）。
+- 资产详情聚合 API：`backend/src/routes/assets.ts`。
+- 前端资产详情页：`frontend/src/pages/AssetDetailPage.tsx`。
